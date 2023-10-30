@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+       <bean name="s1" class="org.example.setter_injection.refence.Employe">
+              <property name="roll_number" value="1"/>
+              <property name="name" value="Tanu Saini" />
+              <property name="contact">
+                     <ref bean="contact"/>
+              </property>
+       </bean>
+
+       <bean name="contact" class="org.example.setter_injection.refence.Contact">
+              <property name="number" >
+                     <list>
+                            <value>2380899878</value>
+                            <value>2380899878</value>
+                     </list>
+              </property>
+       </bean>
+</beans>
